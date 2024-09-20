@@ -4,9 +4,15 @@
     box-sizing: border-box;
 }
 
+:root {
+    --blue: #3498db; 
+    --border-color: #e0e0e0;
+}
+
 body {
     font-family: "Roboto", sans-serif;
     display: flex;
+    background-color: #f6f6f6;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -32,7 +38,7 @@ body {
 .progress-container::before {
     content:""; 
     position: absolute;
-    background-color: gray;
+    background-color: var(--border-color);
     width: 100%;
     height: 4px;
     left: 0%;
@@ -43,7 +49,7 @@ body {
 
 .progress {
     position: absolute;
-    background-color: blue;
+    background-color: var(--blue);
     width: 0.1%;
     height: 4px;
     left: 0%;
@@ -62,21 +68,21 @@ body {
     border-radius: 50%;
     width: 35px;
     height: 35px;
-    border: 3px solid gray;
+    border: 3px solid var(--border-color);
     display: grid;
     place-items: center;
     transition: 0.4s ease;
 }
 
 .circal.active {
-    border-color: blue !important;
+    border-color: var(--blue) !important;
 
 }
 
 .btn {
     margin: 5px;
     padding: 8px 22px;
-    background-color: blue;
+    background-color: var(--blue);
     color: white;
     font-family: inherit;
     font-size: 16px;
@@ -96,7 +102,7 @@ body {
 }
 
 .btn:disabled {
-    background-color: gray;
+    background-color: var(--border-color);
     transform: none;
     cursor:not-allowed;
 }
